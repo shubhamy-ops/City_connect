@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F8FAFC] text-slate-800 antialiased font-sans overflow-x-hidden selection:bg-brandorange-500 selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* ─── Premium Glass Card ─── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px -4px rgba(30, 58, 138, 0.06), 0 1px 4px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 16px 40px -8px rgba(30, 58, 138, 0.12), 0 6px 12px -4px rgba(249, 115, 22, 0.07);
+  transform: translateY(-3px);
+}
+
+.glass-card-static {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px 0 rgba(15, 23, 42, 0.05);
+}
+
+/* ─── Input Fields ─── */
+.field-input {
+  @apply w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-[12px] text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-brandorange-500 focus:ring-2 focus:ring-orange-500/15 transition-all;
+}
+
+/* ─── CTA Buttons ─── */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brandorange-500 to-amber-500 hover:from-brandorange-600 hover:to-amber-600 text-white font-heading font-bold text-sm rounded-[12px] shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-deepblue-900 hover:bg-deepblue-950 text-white font-heading font-bold text-sm rounded-[12px] shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white hover:bg-slate-50 text-deepblue-900 font-heading font-bold text-sm rounded-[12px] border border-slate-200 shadow-sm hover:border-brandorange-500 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300;
+}
+
+/* ─── Icon Badges ─── */
+.icon-badge-orange {
+  @apply w-11 h-11 rounded-xl bg-orange-500/10 text-brandorange-500 border border-orange-500/20 flex items-center justify-center font-bold shrink-0;
+}
+.icon-badge-blue {
+  @apply w-11 h-11 rounded-xl bg-deepblue-900/10 text-deepblue-900 border border-deepblue-900/20 flex items-center justify-center font-bold shrink-0;
+}
+.icon-badge-emerald {
+  @apply w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center justify-center font-bold shrink-0;
+}
+.icon-badge-rose {
+  @apply w-11 h-11 rounded-xl bg-rose-500/10 text-rose-600 border border-rose-500/20 flex items-center justify-center font-bold shrink-0;
+}
+.icon-badge-violet {
+  @apply w-11 h-11 rounded-xl bg-violet-500/10 text-violet-600 border border-violet-500/20 flex items-center justify-center font-bold shrink-0;
+}
+
+/* ─── Pulsing Pin Animation ─── */
+@keyframes pinPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+.pin-pulse { animation: pinPulse 2s infinite; }
+
+/* ─── Leaflet Map Light Theme ─── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  z-index: 10;
+  font-family: 'Inter', sans-serif !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15) !important;
+}
+.leaflet-popup-tip { background: #ffffff !important; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #F97316; }
+
+/* ─── Status Badge Variants ─── */
+.status-reported  { @apply bg-slate-100 text-slate-700 border border-slate-200; }
+.status-assigned  { @apply bg-blue-50 text-blue-700 border border-blue-200; }
+.status-inprogress{ @apply bg-amber-50 text-amber-700 border border-amber-200; }
+.status-fixed     { @apply bg-emerald-50 text-emerald-700 border border-emerald-200; }
+.status-verified  { @apply bg-green-50 text-green-700 border border-green-200; }
+
+/* ─── Priority Badge Variants ─── */
+.priority-low     { @apply bg-slate-50 text-slate-600 border border-slate-200; }
+.priority-medium  { @apply bg-blue-50 text-blue-700 border border-blue-200; }
+.priority-high    { @apply bg-amber-50 text-amber-700 border border-amber-200; }
+.priority-urgent  { @apply bg-rose-50 text-rose-700 border border-rose-200; }
+
+/* ─── Fade In Animation ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
